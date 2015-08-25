@@ -1,0 +1,21 @@
+{
+  "name": "myoon",
+  "version": "0.0.0",
+  "authors": [
+    "ned rihine <ned.rihine@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.4",
+    "angular-material": "~0.10.1",
+    "material-design": "*",
+    "roboto-fontface": "~0.4.3"
+  }
+}

@@ -1,0 +1,50 @@
+<!doctype html>
+
+<html lang="ja" ng-app="MyoonApp">
+ <head>
+  <meta charset="UTF-8"/>
+  <link href="bower_components/angular-material/angular-material.min.css" rel="stylesheet" />
+  <link href="bower_components/roboto-fontface/css/roboto-fontface.css" rel="stylesheet" />
+  <link href="styles/screen.css" rel="stylesheet" />
+  <meta name="viewport" content="initial-scale=1" />
+  <title>Myoon</title>
+ </head>
+ <body layout="column" ng-controller="AppController">
+  <md-toolbar layout="row" class="md-theme-light">
+   <div class="md-toolbar-tools">
+    <md-button class="md-icon-button" ng-click="toggleSidenav('left')" hide-gt>
+     <md-icon aria-label="Menu" md-svg-icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/68133/menu.svg"></md-icon>
+    </md-button>
+    <h1>Myoon</h1>
+   </div>
+  </md-toolbar>
+  
+  <div layout="row" flex>
+   <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')">
+
+   </md-sidenav>
+
+   <div layout="column" flex id="content">
+    <md-content class="md-padding" layout="column">
+     
+     <md-list>
+      <md-list-item class="md-3-line" ng-repeat="tweet in tweets">
+       <div class="md-list-item-text">
+        <h3>{{tweet.screen_name}}</h3>
+        <p>{{tweet.text}}</p>
+        <p>{{tweet.source}}</p>
+       </div>
+       <md-divider ng-if="!$last"></md-divider>
+      </md-list-item>
+     </md-list>
+
+    </md-content>
+   </div>
+  </div>
+  <script src="bower_components/angular/angular.min.js"></script>
+  <script src="bower_components/angular-animate/angular-animate.min.js"></script>
+  <script src="bower_components/angular-aria/angular-aria.min.js"></script>
+  <script src="bower_components/angular-material/angular-material.min.js"></script>
+  <script src="script/index.js"></script>
+ </body>
+</html>
